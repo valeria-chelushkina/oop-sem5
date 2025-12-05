@@ -7,8 +7,8 @@ public class PreciousStone extends Gemstone {
     private String origin;
 
     // constructor
-    public PreciousStone(String name, double weight, double cost, double transparency, String color, String origin) {
-        super(name, weight, cost, transparency, color);
+    public PreciousStone(String name, double weight, double cost, double transparency, String lustre, String color, String origin) {
+        super(name, weight, cost, transparency, lustre, color);
         this.origin = origin;
     }
 

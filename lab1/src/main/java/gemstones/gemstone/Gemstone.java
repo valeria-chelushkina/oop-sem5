@@ -7,14 +7,16 @@ public abstract class Gemstone {
     private double weight; // carats
     private double cost; // UAH
     private double transparency; // from 0 to 1 (0 - not transparent, 1 - transparent)
+    private String lustre; //examples: Adamantine, Dull, Greasy, Metallic etc.
     private String color;
 
     // constructor
-    public Gemstone(String name, double weight, double cost, double transparency, String color) {
+    public Gemstone(String name, double weight, double cost, double transparency, String lustre, String color) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
         this.transparency = transparency;
+        this.lustre = lustre;
         this.color = color;
     }
 
@@ -61,6 +63,16 @@ public abstract class Gemstone {
         this.transparency = transparency;
     }
 
+    // getter for gemstone lustre
+    public String getLustre() {
+        return lustre;
+    }
+
+    // setter for gemstone lustre
+    public void setLustre(String lustre) {
+        this.lustre = lustre;
+    }
+
     // getter for gemstone color
     public String getColor() {
         return color;
@@ -78,8 +90,8 @@ public abstract class Gemstone {
 
     @Override
     public String toString() {
-        return String.format("%s: weight = %.2f carats; cost = %.2f₴; transparency = %.2f; color = %s",
-                name, weight, cost, transparency, color);
+        return String.format("%s: weight = %.2f carats; cost = %.2f ₴; transparency = %.2f; lustre = %s; color = %s.",
+                name, weight, cost, transparency, lustre, color);
     }
 
     @Override

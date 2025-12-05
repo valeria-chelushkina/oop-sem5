@@ -7,8 +7,8 @@ public class SemiPreciousStone extends Gemstone {
     private String hardness; // Mohs hardness scale
 
     // constructor
-    public SemiPreciousStone(String name, double weight, double cost, double transparency, String color, String hardness) {
-        super(name, weight, cost, transparency, color);
+    public SemiPreciousStone(String name, double weight, double cost, double transparency, String lustre, String color, String hardness) {
+        super(name, weight, cost, transparency, lustre, color);
         this.hardness = hardness;
     }
 
