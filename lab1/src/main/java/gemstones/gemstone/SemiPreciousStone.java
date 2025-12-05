@@ -24,6 +24,6 @@ public class SemiPreciousStone extends Gemstone {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", hardness = %s [Semiprecious]", hardness);
+        return super.toString() + String.format("; hardness = %s [Semiprecious]", hardness);
     }
 }

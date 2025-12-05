@@ -90,7 +90,7 @@ public abstract class Gemstone {
 
     @Override
     public String toString() {
-        return String.format("%s: weight = %.2f carats; cost = %.2f ₴; transparency = %.2f; lustre = %s; color = %s.",
+        return String.format("%s: weight = %.2f carats; cost = %.2f ₴; transparency = %.2f; lustre = %s; color = %s",
                 name, weight, cost, transparency, lustre, color);
     }
 

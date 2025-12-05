@@ -24,6 +24,6 @@ public class PreciousStone extends Gemstone {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", origin = %s [Precious]", origin);
+        return super.toString() + String.format("; origin = %s [Precious]", origin);
     }
 }
