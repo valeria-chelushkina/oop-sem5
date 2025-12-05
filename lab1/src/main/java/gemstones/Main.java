@@ -136,7 +136,7 @@ public class Main {
                 String pattern = scanner.nextLine().trim();
                 stone = new Amethyst(weight, cost, transparency, lustre, color, hardness, pattern);
                 break;
-            case 5: // Topaz
+            case 5: // Opal
                 System.out.print("Hardness: ");
                 hardness = scanner.nextLine().trim();
                 System.out.print("Play of colors: ");
@@ -150,7 +150,7 @@ public class Main {
                 String inclusions = scanner.nextLine().trim();
                 stone = new Aventurine(weight, cost, transparency, lustre, color, hardness, inclusions);
                 break;
-            case 7: // Create new stone
+            case 7: // create new gemstone
                 System.out.print("Name: ");
                 String name = scanner.nextLine().trim();
                 System.out.print("Type (1 - Precious, 2 - Semiprecious): ");
@@ -169,13 +169,13 @@ public class Main {
                 }
                 break;
             default:
-                System.out.println("Невірний тип каміння.");
+                System.out.println("Wrong type of gemstone.");
                 return;
         }
 
         if (stone != null) {
             necklace.addGemstone(stone);
-            System.out.println("Каміння додано до намиста.");
+            System.out.println("Gemstone added to the necklace.");
         }
     }
 
@@ -232,7 +232,6 @@ public class Main {
             System.out.println("Max transparency clamped to 1.");
         }
 
-        // Swap if min > max
         if (min > max) {
             double temp = min;
             min = max;
@@ -253,9 +252,24 @@ public class Main {
 
     // save necklace to file
     private static void saveNecklace() {
+        System.out.println("\n=== SAVE NECKLACE ===");
+        System.out.println("1. Save to default file (necklace_data.txt)");
+        System.out.println("2. Save to custom file");
+        System.out.print("Choose an option: ");
+        
+        int choice = getIntInput();
         try {
-            FileManager.saveNecklace(necklace);
-            System.out.println("Necklace saved to file.");
+            if (choice == 1) {
+                FileManager.saveNecklace(necklace);
+                System.out.println("Necklace saved to default file.");
+            } else if (choice == 2) {
+                System.out.print("Enter file path: ");
+                String filePath = scanner.nextLine().trim();
+                FileManager.saveNecklace(necklace, filePath);
+                System.out.println("Necklace saved to file: " + filePath);
+            } else {
+                System.out.println("Invalid choice.");
+            }
         } catch (IOException e) {
             System.out.println("Error while saving: " + e.getMessage());
         }
@@ -263,9 +277,24 @@ public class Main {
 
     // load necklace from file
     private static void loadNecklace() {
+        System.out.println("\n=== LOAD NECKLACE ===");
+        System.out.println("1. Load from default file (necklace_data.txt)");
+        System.out.println("2. Load from custom file");
+        System.out.print("Choose an option: ");
+        
+        int choice = getIntInput();
         try {
-            necklace = FileManager.loadNecklace();
-            System.out.println("The necklace is loaded from a file.");
+            if (choice == 1) {
+                necklace = FileManager.loadNecklace();
+                System.out.println("The necklace is loaded from default file.");
+            } else if (choice == 2) {
+                System.out.print("Enter file path: ");
+                String filePath = scanner.nextLine().trim();
+                necklace = FileManager.loadNecklace(filePath);
+                System.out.println("The necklace is loaded from file: " + filePath);
+            } else {
+                System.out.println("Invalid choice.");
+            }
         } catch (IOException e) {
             System.out.println("Error while loading: " + e.getMessage());
         }
@@ -277,7 +306,12 @@ public class Main {
         necklace.addGemstone(new Ruby(1.8, 30000, 0.85, "Subadamantine", "Red", "Myanmar", 0.9));
         necklace.addGemstone(new Emerald(2.0, 25000, 0.75, "Vitreous", "Green", "Columbia", false));
         necklace.addGemstone(new Amethyst(3.0, 5000, 0.8, "Glassy", "Purple", "7", "Striped"));
+        necklace.addGemstone(new Opal(2.2, 4000, 0.9, "Oily", "Green", "8", "Iridescent"));
         necklace.addGemstone(new Aventurine(2.2, 4000, 0.9, "Oily", "Green", "8", "Fuchsite"));
+        necklace.addGemstone(new PreciousStone("Sapphire", 1.5, 20000, 0.88, "Adamantine", "Blue", "Sri Lanka"));
+        necklace.addGemstone(new SemiPreciousStone("Quartz", 2.8, 3000, 0.7, "Vitreous", "Clear", "7"));
+        necklace.addGemstone(new PreciousStone("Pearl", 1.2, 15000, 0.6, "Pearly", "White", "Japan"));
+        necklace.addGemstone(new SemiPreciousStone("Jade", 3.5, 8000, 0.65, "Greasy", "Green", "6.5"));
     }
 
     // get int number from console

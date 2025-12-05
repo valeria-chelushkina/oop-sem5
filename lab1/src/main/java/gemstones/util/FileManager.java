@@ -10,7 +10,7 @@ import java.util.List;
 // class for working with files. saves and loads the necklace initialization parameters
 public class FileManager {
 
-    private static final String DEFAULT_FILE_NAME = "necklace_data.txt";
+    private static final String DEFAULT_FILE_NAME = "lab1/src/main/java/gemstones/necklace_data.txt";
 
     // save the necklace into the file
     public static void saveNecklace(Necklace necklace, String fileName) throws IOException {

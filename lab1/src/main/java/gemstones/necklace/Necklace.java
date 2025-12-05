@@ -95,7 +95,7 @@ public class Necklace {
         sb.append("Necklace:\n");
         sb.append(String.format("Number of gemstones: %d\n", gemstones.size()));
         sb.append(String.format("Total weight: %.2f carats\n", getTotalWeight()));
-        sb.append(String.format("Total price: %.2f ₴\n\n", getTotalCost()));
+        sb.append(String.format("Total price: %.2f UAH\n\n", getTotalCost()));
         sb.append("Gemstones:\n");
         for (int i = 0; i < gemstones.size(); i++) {
             sb.append(String.format("%d. %s\n", i + 1, gemstones.get(i)));
