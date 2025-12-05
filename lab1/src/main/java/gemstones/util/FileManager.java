@@ -142,10 +142,21 @@ public class FileManager {
                         return new Aventurine(weight, cost, transparency, lustre, color, parts[7], parts[8]);
                     }
                     break;
-                default:
-                    // if class unknown - create PreciousStone
+                case "PreciousStone":
                     if (parts.length >= 8) {
-                        return new PreciousStone(name, weight, cost, transparency, lustre, color, parts[8]);
+                        return new PreciousStone(name, weight, cost, transparency, lustre, color, parts[7]);
+                    }
+                    break;
+                case "SemiPreciousStone":
+                    if (parts.length >= 8) {
+                        return new SemiPreciousStone(name, weight, cost, transparency, lustre, color, parts[7]);
+                    }
+                    break;
+                default:
+                    // if class unknown - try to create PreciousStone or SemiPreciousStone
+                    if (parts.length >= 8) {
+                        // Try PreciousStone first (with origin at parts[7])
+                        return new PreciousStone(name, weight, cost, transparency, lustre, color, parts[7]);
                     } else if (parts.length == 7) {
                         // cannot create precious or semi precious stones. not enough data
                         System.err.println("Not enough data to create stones: " + name);
