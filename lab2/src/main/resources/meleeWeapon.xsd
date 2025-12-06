@@ -110,16 +110,16 @@
             <xs:element name="handy" type="handyType"/>
             <xs:element name="origin" type="countryType"/>
             <xs:element name="visual" type="visualType" maxOccurs="unbounded"/>
-            <xs:element name="value" type="xs:boolean"/>
+            <xs:element name="value" type="xs:boolean"/>    <!-- collectibe or not -->
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required"/>
     </xs:complexType>
 
     <!-- root element -->
-    <xs:element name="MeleeWeapon">
+    <xs:element name="Knife">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="weapon" type="meleeWeaponType" maxOccurs="unbounded"/>
+                <xs:element name="knife" type="meleeWeaponType" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
