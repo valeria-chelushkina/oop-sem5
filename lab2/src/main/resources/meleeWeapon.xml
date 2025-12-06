@@ -2,7 +2,7 @@
 <Knife xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="meleeWeapon.xsd">
 
-    <knife id="w1">
+    <knife id="k1">
         <type>knife</type>
         <handy>one-handed</handy>
         <origin>Ukraine</origin>
@@ -32,7 +32,7 @@
         <value>true</value>
     </knife>
 
-    <knife id="w2">
+    <knife id="k2">
         <type>dagger</type>
         <handy>one-handed</handy>
         <origin>Germany</origin>
@@ -50,7 +50,7 @@
         <value>false</value>
     </knife>
 
-    <knife id="w3">
+    <knife id="k3">
         <type>saber</type>
         <handy>one-handed</handy>
         <origin>Poland</origin>
@@ -69,7 +69,7 @@
         <value>true</value>
     </knife>
 
-    <knife id="w4">
+    <knife id="k4">
         <type>sword</type>
         <handy>two-handed</handy>
         <origin>Japan</origin>
@@ -88,7 +88,7 @@
         <value>true</value>
     </knife>
 
-    <knife id="w5">
+    <knife id="k5">
         <type>machete</type>
         <handy>one-handed</handy>
         <origin>USA</origin>
