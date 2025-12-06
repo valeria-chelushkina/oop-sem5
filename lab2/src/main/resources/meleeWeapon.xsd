@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <!-- types of melee weapons -->
+    <xs:simpleType name="weaponType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="knife"/>
+            <xs:enumeration value="dagger"/>
+            <xs:enumeration value="saber"/>
+            <xs:enumeration value="sword"/>
+            <xs:enumeration value="spear"/>
+            <xs:enumeration value="axe"/>
+            <xs:enumeration value="machete"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- types of handles -->
+    <xs:simpleType name="handyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="one-handed"/>
+            <xs:enumeration value="two-handed"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- types of blade materials -->
+    <xs:simpleType name="bladeMaterial">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="steel"/> 
+            <xs:enumeration value="cast iron"/> 
+            <xs:enumeration value="copper"/> 
+            <xs:enumeration value="titanium"/> 
+            <xs:enumeration value="bronze"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- types of handle materials -->
+    <xs:simpleType name="handleMaterial">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="wooden"/> 
+            <xs:enumeration value="plastic"/> 
+            <xs:enumeration value="metal"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- types of wood -->
+    <xs:simpleType name="woodType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="oak"/> 
+            <xs:enumeration value="ash"/> 
+            <xs:enumeration value="walnut"/> 
+            <xs:enumeration value="birch"/> 
+            <xs:enumeration value="beech"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- template for country. in english, only symbols, 2 letters minimum -->
+    <xs:simpleType name="countryType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z\s]{2,}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- limit values ​​for blade length (10-n cm) -->
+    <xs:simpleType name="bladeLengthType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="10"/>
+            <xs:maxInclusive value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- limit values ​​for blade width (10-n mm) -->
+    <xs:simpleType name="bladeWidthType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="10"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- integrated type for handle -->
+    <xs:complexType name="handleType">
+        <xs:sequence>
+            <xs:element name="material" type="handleMaterial"/>
+            <xs:element name="woodType" type="woodType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- integrated type for blade -->
+    <xs:complexType name="bladeType">
+        <xs:sequence>
+            <xs:element name="length" type="bladeLengthType"/>
+            <xs:element name="width" type="bladeWidthType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- integrated type for visual characteristics -->
+    <xs:complexType name="visualType">
+        <xs:sequence>
+            <xs:element name="blade" type="bladeType"/>
+            <xs:element name="material" type="bladeMaterial"/>
+            <xs:element name="handle" type="handleType"/>
+            <xs:element name="bloodGroove" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- integrated type for melee weapon -->
+    <xs:complexType name="meleeWeaponType">
+        <xs:sequence>
+            <xs:element name="type" type="weaponType"/>
+            <xs:element name="handy" type="handyType"/>
+            <xs:element name="origin" type="countryType"/>
+            <xs:element name="visual" type="visualType" maxOccurs="unbounded"/>
+            <xs:element name="value" type="xs:boolean"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <!-- root element -->
+    <xs:element name="MeleeWeapon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="weapon" type="meleeWeaponType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
