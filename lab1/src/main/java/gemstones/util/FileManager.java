@@ -137,6 +137,11 @@ public class FileManager {
                         return new Opal(weight, cost, transparency, lustre, color, parts[7], parts[8]);
                     }
                     break;
+                case "Opal":
+                    if (parts.length >= 9) {
+                        return new Opal(weight, cost, transparency, lustre, color, parts[7], parts[8]);
+                    }
+                    break;
                 case "Aventurine":
                     if (parts.length >= 9) {
                         return new Aventurine(weight, cost, transparency, lustre, color, parts[7], parts[8]);
