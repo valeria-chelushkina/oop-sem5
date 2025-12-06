@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Knife xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="meleeWeapon.xsd">
+
+    <knife id="k1">
+        <type>knife</type>
+        <handy>one-handed</handy>
+        <origin>Ukraine</origin>
+        <visual>
+            <blade>
+                <length>25.5</length>
+                <width>35</width>
+            </blade>
+            <material>steel</material>
+            <handle>
+                <material>wooden</material>
+                <woodType>oak</woodType>
+            </handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+        <visual>
+            <blade>
+                <length>30.0</length>
+                <width>40</width>
+            </blade>
+            <material>titanium</material>
+            <handle>
+                <material>metal</material>
+            </handle>
+            <bloodGroove>false</bloodGroove>
+        </visual>
+        <value>true</value>
+    </knife>
+
+    <knife id="k2">
+        <type>dagger</type>
+        <handy>one-handed</handy>
+        <origin>Germany</origin>
+        <visual>
+            <blade>
+                <length>20.0</length>
+                <width>25</width>
+            </blade>
+            <material>steel</material>
+            <handle>
+                <material>plastic</material>
+            </handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+        <value>false</value>
+    </knife>
+
+    <knife id="k3">
+        <type>saber</type>
+        <handy>one-handed</handy>
+        <origin>Poland</origin>
+        <visual>
+            <blade>
+                <length>85.0</length>
+                <width>30</width>
+            </blade>
+            <material>steel</material>
+            <handle>
+                <material>wooden</material>
+                <woodType>ash</woodType>
+            </handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+        <value>true</value>
+    </knife>
+
+    <knife id="k4">
+        <type>sword</type>
+        <handy>two-handed</handy>
+        <origin>Japan</origin>
+        <visual>
+            <blade>
+                <length>120.0</length>
+                <width>45</width>
+            </blade>
+            <material>steel</material>
+            <handle>
+                <material>wooden</material>
+                <woodType>walnut</woodType>
+            </handle>
+            <bloodGroove>false</bloodGroove>
+        </visual>
+        <value>true</value>
+    </knife>
+
+    <knife id="k5">
+        <type>machete</type>
+        <handy>one-handed</handy>
+        <origin>USA</origin>
+        <visual>
+            <blade>
+                <length>45.0</length>
+                <width>50</width>
+            </blade>
+            <material>cast iron</material>
+            <handle>
+                <material>plastic</material>
+            </handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+        <value>false</value>
+    </knife>
+
+</Knife>
